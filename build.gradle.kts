@@ -1,5 +1,10 @@
 plugins {
     id("java")
+    id("application")
+}
+
+apply {
+    plugin("java")
 }
 
 group = "be.cardoeng"
@@ -16,4 +21,10 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+val javaMainClass = "be.cardoeng.Main"
+
+application {
+    mainClass.set(javaMainClass)
 }
